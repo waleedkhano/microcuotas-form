@@ -226,9 +226,9 @@ export default function Admin() {
               <button onClick={filterData}>filter</button>
             </span>
           </div>
-          {/* <div>
+          <div>
             <button disabled={clientesData.length === 0} onClick={toExport}>Exportar CSV</button>
-          </div> */}
+          </div>
         </div>
       </div>
       <div className="filter__field__container">
