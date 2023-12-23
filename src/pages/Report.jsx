@@ -75,8 +75,13 @@ export default function Admin() {
   };
 
   const getTime = (fechaSolicitud) => {
-    const fireBaseTime = new Date(fechaSolicitud.seconds * 1000 + fechaSolicitud.nanoseconds / 1000000);
-    return fireBaseTime;
+    if (fechaSolicitud && fechaSolicitud.seconds !== undefined) {
+      const nanoseconds = fechaSolicitud.nanoseconds || 0;
+      const fireBaseTime = new Date(fechaSolicitud.seconds * 1000 + nanoseconds / 1000000);
+      return fireBaseTime;
+    } else {
+      return null; 
+    }
   };
   
 
