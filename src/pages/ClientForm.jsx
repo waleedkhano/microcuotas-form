@@ -17,7 +17,7 @@ const ClientForm = () => {
   const [hijos, setHijos] = useState('');
   const [ocupacion, setOcupacion] = useState('');
   const [ingresoMensual, setIngresoMensual] = useState('');
-  const [antiguedad, setAntiguedad] = useState('');
+  const [fechaIngreso, setFechaIngreso] = useState('');
   const [fechaNacimiento, setFechaNacimiento] = useState('');
   const [dniFrente, setDniFrente] = useState(null);
   const [dniDorso, setDniDorso] = useState(null);
@@ -61,7 +61,7 @@ const ClientForm = () => {
   };
 
   const handleAntiguedadChange = (e) => {
-    setAntiguedad(e.target.value);
+    setFechaIngreso(e.target.value);
   };
 
   const handleFechaNacimientoChange = (e) => {
@@ -100,7 +100,7 @@ const ClientForm = () => {
       !hijos ||
       !ocupacion ||
       !ingresoMensual ||
-      !antiguedad ||
+      !fechaIngreso ||
       !fechaNacimiento ||
       !fechaSolicitud ||
       !dniFrente ||
@@ -143,7 +143,7 @@ const ClientForm = () => {
         hijos,
         ocupacion,
         ingresoMensual,
-        antiguedad,
+        fechaIngreso,
         fechaNacimiento,
         fechaSolicitud,
         dniFrente: dniFrenteURL,
@@ -162,7 +162,7 @@ const ClientForm = () => {
       setHijos('');
       setOcupacion('');
       setIngresoMensual('');
-      setAntiguedad('');
+      setFechaIngreso('');
       setFechaNacimiento('');
       setDniFrente(null);
       setDniDorso(null);
@@ -247,8 +247,8 @@ const ClientForm = () => {
             </label>
 
             <label>
-              Antigüedad:
-              <input type="number" value={antiguedad} onChange={handleAntiguedadChange} />
+              Fecha de Ingreso a su actual empleo (Antigüedad):
+              <input type="date" value={fechaIngreso} onChange={handleAntiguedadChange} />
             </label>
 
             <label>
